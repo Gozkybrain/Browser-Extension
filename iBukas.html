@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>My Personal Task Management Assistant</title>
+  <meta name="keywords" content="Chrome Extension, Task Management, Todo List, Libraries" />
+  <meta name="description" content="My Personal Task Management Assistant " />
+  <link rel='stylesheet' href='exStyle.css' type='text/css' />
+  <link rel="stylesheet" href="accordionstyle.css">
+  <link rel="stylesheet" href="liststyle.css">
+</head>
+
+<body class="size">
+
+  <!-- * THE FOOT NAV BAR -->
+  <div class="tabs">
+    <span data-tab-value="#tab_1">&#127962; Home</span>
+    <span data-tab-value="#tab_2">&#128194; My Library</span>
+    <span data-tab-value="#tab_3">&#128186; Todo List</span>
+    <span data-tab-value id="myBtn">&#9776; More</span>
+
+  </div>
+
+  <!-- ** PAGE STARTS HERE -->
+
+
+
+
+  <div id="navbar">
+    <!-- * SIDE BAR MENU BEGINS FROM HERE -->
+    <div id="mySidenav" class="myMobNav">
+
+      <!-- ! Close the Sidebar -->
+      <a href="javascript:void(0)" class="closebtn">&times;</a>
+
+      <!-- ! Profile Sidebar Content -->
+      <div style="text-align: center;">
+        <img src="Gozkybrain_NG.PNG" alt="Gozkybrain_NG" style="width: 30%; margin-top: 20px;" title="My Icon">
+        <div style="margin-top: 30px; float: left; width: 50%; text-align: right; color: #3b5998;">
+          <h1>Gozkybrain Izuka</h1>
+          <div style="margin-top: 5px; margin-bottom: 15px;">Frontend Developer (Javascript)</div>
+
+          <!-- == Social buttons here -->
+          <button class="fa-brands fa-facebook-f"
+            style="padding: 8px 12px; color: white; background-color: #3b5998; border: 1px solid #3b5998; border-radius: 5px;"></button>
+          <button class="fa-brands fa-twitter"
+            style="padding: 8px 12px; color: white; background-color: #1da1f2; border: 1px solid #1da1f2; border-radius: 5px;"></button>
+          <button class="fa-brands fa-instagram"
+            style="padding: 8px 12px; color: white; background-color: #d62976; border: 1px solid #3b5998; border-radius: 5px;"></button>
+          <button class="fa-brands fa-tiktok"
+            style="padding: 8px 12px; color: white; background-color: #000; border: 1px solid #000; border-radius: 5px;"></button>
+          <button class="fa-brands fa-linkedin"
+            style="padding: 8px 12px; color: white; background-color: #0072b1; border: 1px solid #0072b1; border-radius: 5px;"></button>
+          <button class="fa-brands fa-github"
+            style="padding: 8px 12px; color: white; background-color: #000; border: 1px solid #000; border-radius: 5px;"></button>
+        </div>
+
+      </div>
+
+      <!-- ! Wishlist section -->
+      <div class="container">
+        <h2>MY CHRISTMAS WISHLIST</h2>
+        <h3>Add Item</h3>
+        <p>
+          <input id="new-task" type="text"><button class="button">Add</button>
+        </p>
+
+        <!-- == Main list items -->
+        <h3>MY ITEMS</h3>
+        <ul id="incomplete-tasks">
+          <li><input type="checkbox"><label>100 Copies of Solana</label><input type="text"><button
+              class="button edit">Edit</button><button class="button delete">Delete</button></li>
+          <li><input type="checkbox"><label>iPad Mini 6</label><input type="text" value="Go Shopping"><button
+              class="button edit">Edit</button><button class="button delete">Delete</button></li>
+          <li><input type="checkbox"><label>Apple Pen 2nd Gen</label><input type="text" value="Go Shopping"><button
+              class="button edit">Edit</button><button class="button delete">Delete</button></li>
+          <li><input type="checkbox"><label>JBL VIBE 300 TWS</label><input type="text" value="Go Shopping"><button
+              class="button edit">Edit</button><button class="button delete">Delete</button></li>
+          <li><input type="checkbox"><label>Magsafe Powerbank</label><input type="text" value="Go Shopping"><button
+              class="button edit">Edit</button><button class="button delete">Delete</button></li>
+          <li><input type="checkbox"><label>1TB External Hard Drive</label><input type="text"
+              value="Go Shopping"><button class="button edit">Edit</button><button class="button delete">Delete</button>
+          </li>
+          <li><input type="checkbox"><label>New Office/Gaming Chair</label><input type="text"
+              value="Go Shopping"><button class="button edit">Edit</button><button class="button delete">Delete</button>
+          </li>
+          <li><input type="checkbox"><label>Desk Area Footmat</label><input type="text" value="Go Shopping"><button
+              class="button edit">Edit</button><button class="button delete">Delete</button></li>
+          <li><input type="checkbox"><label>Ringlight</label><input type="text" value="Go Shopping"><button
+              class="button edit">Edit</button><button class="button delete">Delete</button></li>
+        </ul>
+
+        <!-- == Display completed items -->
+        <h3>Completed</h3>
+        <ul id="completed-tasks">
+          <li><input type="checkbox" checked><label>Serious Headache</label><input type="text"><button
+              class="button edit">Edit</button><button class="button delete">Delete</button></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <!-- * THE MAIN PAGE CONTENT HERE -->
+  <div class="page">
+
+
+    <div class="tab- content">
+
+      <!-- * first button display home-->
+      <div class="tabs__tab active" id="tab_1" data-tab-info>
+        <div style="margin-top: 100px; text-align: center;">
+
+
+          <img src="Gozkybrain_NG.PNG" alt="Gozkybrain_NG" style="width: 40%;">
+          <div style="margin-top: 30px; float: left; width: 50%; text-align: right; color: #3b5998;">
+            <h1>Gozkybrain Izuka</h1>
+            <div style="margin-top: 5px; margin-bottom: 15px;">Frontend Developer (Javascript)</div>
+
+            <button class="fa-brands fa-facebook-f"
+              style="padding: 8px 12px; color: white; background-color: #3b5998; border: 1px solid #3b5998; border-radius: 5px;"></button>
+            <button class="fa-brands fa-twitter"
+              style="padding: 8px 12px; color: white; background-color: #1da1f2; border: 1px solid #1da1f2; border-radius: 5px;"></button>
+            <button class="fa-brands fa-instagram"
+              style="padding: 8px 12px; color: white; background-color: #d62976; border: 1px solid #3b5998; border-radius: 5px;"></button>
+            <button class="fa-brands fa-tiktok"
+              style="padding: 8px 12px; color: white; background-color: #000; border: 1px solid #000; border-radius: 5px;"></button>
+            <button class="fa-brands fa-linkedin"
+              style="padding: 8px 12px; color: white; background-color: #0072b1; border: 1px solid #0072b1; border-radius: 5px;"></button>
+            <button class="fa-brands fa-github"
+              style="padding: 8px 12px; color: white; background-color: #000; border: 1px solid #000; border-radius: 5px;"></button>
+          </div>
+
+        </div>
+
+
+        <center>
+          <div class="msg">A Normal Life is Boring.</div>
+
+          <div class="float" style="padding: 0px 50px;">
+
+            <div class="text-box" style="float: left;">
+              <a href="https://gozkybrain.com/" class="btn2 btn btn-white btn-animate">My Resume</a>
+            </div>
+            <div class="text-box" style="float: center;">
+              <a href="https://gozkybrain.com/" class="btn1 btn btn-white btn-animate">My Portfolio</a>
+            </div>
+
+          </div>
+        </center>
+
+
+      </div>
+
+
+
+      <!-- * second button display library-->
+      <div class="tabs__tab" id="tab_2" data-tab-info>
+        <div style="margin-top: 10px; text-align: center;">
+
+
+          <img src="Gozkybrain_NG.PNG" alt="Gozkybrain_NG" style="width: 30%; margin-top: 20px;">
+          <div style="margin-top: 30px; float: left; width: 50%; text-align: right; color: #3b5998;">
+            <h1>Gozkybrain Izuka</h1>
+            <div style="margin-top: 5px; margin-bottom: 15px;">Frontend Developer (Javascript)</div>
+
+            <button class="fa-brands fa-facebook-f"
+              style="padding: 8px 12px; color: white; background-color: #3b5998; border: 1px solid #3b5998; border-radius: 5px;"></button>
+            <button class="fa-brands fa-twitter"
+              style="padding: 8px 12px; color: white; background-color: #1da1f2; border: 1px solid #1da1f2; border-radius: 5px;"></button>
+            <button class="fa-brands fa-instagram"
+              style="padding: 8px 12px; color: white; background-color: #d62976; border: 1px solid #3b5998; border-radius: 5px;"></button>
+            <button class="fa-brands fa-tiktok"
+              style="padding: 8px 12px; color: white; background-color: #000; border: 1px solid #000; border-radius: 5px;"></button>
+            <button class="fa-brands fa-linkedin"
+              style="padding: 8px 12px; color: white; background-color: #0072b1; border: 1px solid #0072b1; border-radius: 5px;"></button>
+            <button class="fa-brands fa-github"
+              style="padding: 8px 12px; color: white; background-color: #000; border: 1px solid #000; border-radius: 5px;"></button>
+          </div>
+
+        </div>
+
+        <div class="col">
+
+          <div class="tabes">
+            <div class="tabe">
+              <input type="radio" id="rd1" name="rd">
+              <label class="tab-label" for="rd1">Material Resources</label>
+              <div class="tab-content">
+
+                <div class="lib">
+                  <li><a href="https://www.w3schools.com/graphics/game_score.asp">W3SCHOOLS</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://github.com/gozkybrain">GITHUB</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://freefrontend.com/jquery-scroll-effects/">FREE FRONTEND</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://www.udemy.com/">UDEMY</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://www.coursera.org/user/d4154d4049349826e7bc35be426d9faf">COURSERA</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://www.youtube.com/feed/library">YOUTUBE</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://linktr.ee/frontend_trend">FRONTEND TREND</a></li>
+                </div>
+                <div class="lib">
+                  <li><a
+                      href="http://technozune.com/?cat=4&fbclid=IwAR24Njgs1KG61Jo7PPsg9QNRCd6xhrYfx54YXRDF79JdgVAq5SVWgv8NIbM">TECH
+                      FILES</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_list">SEARCH
+                      FILTER</a></li>
+                </div>
+
+              </div>
+            </div>
+            <div class="tabe">
+              <input type="radio" id="rd2" name="rd">
+              <label class="tab-label" for="rd2">Hosting Services</label>
+              <div class="tab-content">
+
+                <div class="lib">
+                  <li><a href="https://ap.www.namecheap.com/dashboard">NAMECHEAP</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://clients.domainking.ng/login">DOMAIN KING</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://nicepage.com/feature/slide-animation-effect-488590">NICEPAGE</a></li>
+                </div>
+                <div class="lib">
+                  <li><a
+                      href="https://app.netlify.com/?_ga=2.48790822.1483748570.1666366506-1703244677.1661564732">NETFLIFY</a>
+                  </li>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="tabe">
+              <input type="radio" id="rd3" name="rd">
+              <label class="tab-label" for="rd3">Images</label>
+              <div class="tab-content">
+
+                <div class="lib">
+                  <li><a href="https://www.flaticon.com/free-icon/google_300221?term=google&page=1&position=1&page=1&position=1&related_id=300221&origin=search
+              ">FLAT ICONS</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://www.pngrepo.com/vectors/forex/">PNG REPO</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://uxwing.com/data-analysis-icon/">PNG & SVG</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://undraw.co/search">UNDRAW IO</a></li>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="tabe">
+              <input type="radio" id="rd4" name="rd">
+              <label class="tab-label" for="rd4">Videos</label>
+              <div class="tab-content">
+
+                <div class="lib">
+                  <li><a href="https://wave.video">WAVES VIDEO</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://www.synthesia.io">SYNTHESIA IO</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://www.blackmagicdesign.com/products/davinciresolve">DA VINCI RESOLVE</a></li>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="tabe">
+              <input type="radio" id="rd6" name="rd">
+              <label class="tab-label" for="rd6">Saved</label>
+              <div class="tab-content">
+
+                <div class="lib">
+                  <li><a href="https://bit2me.com/suite/premium">BIT2ME</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://www.w3schools.com/HOWTO/howto_css_devices.asp">DEVICE CHECK RESOURCES</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://www.editorx.com/shaping-design/article/parallax-scrolling">PARALLAX SCROLL
+                      MATERIALS</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://crypto.com/price/widget">CRYPTO WIDGETS</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://codepen.io/dsenneff/pen/QajVxO/2d338b0adf97472ebc5d473cf1fa910b">FANCY LOGIN
+                      ANIMATION</a></li>
+                </div>
+                <div class="lib">
+                  <li><a
+                      href="https://www.bytewebster.com/front-endprojects?fbclid=IwAR0kB-RItclxrnbahO6p_UlmlvIRoLHETw2LRUKv6JKRrQxLee0I0Q4NC-0">FRONTEND
+                      PROJECTS</a></li>
+                </div>
+                <div class="lib">
+                  <li><a href="https://obsproject.com/ja/kb/mac-installation">OBS INSTALLATION</a></li>
+                </div>
+
+              </div>
+            </div>
+
+
+
+            <div class="tabe">
+              <input type="radio">
+              <label class="tab-end"> NOTE: This Library is Always Updated. </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+    <!-- third button display todolist -->
+    <div class="tabs__tab" id="tab_3" data-tab-info>
+      <div style="margin-top: 30px; text-align: center;">
+
+
+        <img src="Gozkybrain_NG.PNG" alt="Gozkybrain_NG" style="width: 30%; margin-top: 20px;">
+        <div style="margin-top: 30px; float: left; width: 50%; text-align: right; color: #3b5998;">
+          <h1>Gozkybrain Izuka</h1>
+          <div style="margin-top: 5px; margin-bottom: 15px;">Frontend Developer (Javascript)</div>
+
+          <button class="fa-brands fa-facebook-f"
+            style="padding: 8px 12px; color: white; background-color: #3b5998; border: 1px solid #3b5998; border-radius: 5px;"></button>
+          <button class="fa-brands fa-twitter"
+            style="padding: 8px 12px; color: white; background-color: #1da1f2; border: 1px solid #1da1f2; border-radius: 5px;"></button>
+          <button class="fa-brands fa-instagram"
+            style="padding: 8px 12px; color: white; background-color: #d62976; border: 1px solid #3b5998; border-radius: 5px;"></button>
+          <button class="fa-brands fa-tiktok"
+            style="padding: 8px 12px; color: white; background-color: #000; border: 1px solid #000; border-radius: 5px;"></button>
+          <button class="fa-brands fa-linkedin"
+            style="padding: 8px 12px; color: white; background-color: #0072b1; border: 1px solid #0072b1; border-radius: 5px;"></button>
+          <button class="fa-brands fa-github"
+            style="padding: 8px 12px; color: white; background-color: #000; border: 1px solid #000; border-radius: 5px;"></button>
+        </div>
+
+      </div>
+
+      <div class="cover">
+
+        <div class="do"> Create a Device Check Model</div>
+        <div class="did"> Create the FLAMES Love Calculator</div>
+        <div class="done do">Create a Browser Extension</div>
+        <div class="did">Create the Circle Effect on Hover</div>
+        <div class="do">Create the Sticky Scroll and Parrallax</div>
+
+        <!-- <div class="do">jgnvn</div> -->
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="exscript.js"></script>
+  <script src="fontAwesome.js"></script>
+  <script src="listscript.js"></script>
+
+</body>
+
+
+
+
+</html>
